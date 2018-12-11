@@ -15,6 +15,7 @@ form {
     border-width: thin;
     display: flex;
     flex-direction: column;
+    width: 400px;
 }
 
 article.tweet {
@@ -47,7 +48,7 @@ article.tweet {
 }
 
 .error { /* used for the counter when it reaches over 140 characters */
-  color: red;
+  color: #ff0000;
 }
 
 article.tweet {
