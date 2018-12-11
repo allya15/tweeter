@@ -1,0 +1,115 @@
+form {
+  z-index: 1;
+}
+
+
+.new-tweet {
+    margin-left: 2em;
+    margin-right: 2em;
+    height: 10em;
+    background-color: #eee;
+    padding: 1em;
+    border-radius: .5em;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+article.tweet {
+  margin-bottom: 16px;
+}
+
+.new-tweet h2 {
+  margin: 4px;
+  border-bottom: 1px black solid;
+  padding: 2px;
+  text-align: left;
+}
+
+.new-tweet textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-top: 16px;
+  z-index: 90;
+}
+
+.new-tweet input {
+  margin-top: 8px;
+}
+
+.new-tweet .counter {
+  float: right;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.error { /* used for the counter when it reaches over 140 characters */
+  color: red;
+}
+
+article.tweet {
+  background-color: #eee;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+}
+
+article.tweet:hover {
+  opacity: 1;
+}
+
+.tweet-header {
+  display: flex;
+  height: 50px;
+  margin: 8px;
+  opacity: 0.5;
+}
+
+.tweet-header img {
+  width: 3em;
+  height: 3em;
+  align-self: center;
+}
+
+.tweet-header span {
+  margin-left: auto;
+  align-self: center;
+}
+
+.tweet-header h2 {
+  margin: 0;
+  padding-left: 8px;
+  align-self: center;
+}
+
+.tweet-content{
+  background-color: white;
+  padding: 16px;
+  font-size: 1em;
+  margin: auto;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.icons {
+  float: right;
+}
+
+.tweet-footer {
+  padding: 8px;
+  height: 30px;
+  font-size: smaller;
+  background-color: white;
+  border-radius: 0px 0px 8px 8px;
+}
+
+article.tweet:hover .tweet-header {
+  opacity: 1;
+}
+
+article.tweet:hover {
+  border-color: black;
+  opacity: 1;
+}

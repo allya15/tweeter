@@ -1,0 +1,27 @@
+#nav-bar {
+    position: fixed;
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 80px;
+    width: 100%;
+    z-index: 1;
+    background-color: #00a087;
+    font-color: #e8fdff;
+    align-items: center;
+    display: flex;
+    flex-grow: row;
+    justify-content: space-between;
+  }
+
+#nav-bar .logo {
+    height: 80px;
+    width: 80px;
+    flex: : auto;
+  }
+
+#nav-bar .header {
+    font-size: 2em;
+    padding-left: 10px;
+    flex: auto;
+    color: #ffffff;
+  }
