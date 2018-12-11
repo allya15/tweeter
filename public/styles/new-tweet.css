@@ -15,7 +15,6 @@ form {
     border-width: thin;
     display: flex;
     flex-direction: column;
-    width: 400px;
 }
 
 article.tweet {

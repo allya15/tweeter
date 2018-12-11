@@ -42,6 +42,7 @@ article.tweet {
   border-width: thin;
   opacity: .7;
   overflow: hidden;
+  width: 400px;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
