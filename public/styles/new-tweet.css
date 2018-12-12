@@ -79,7 +79,7 @@ article.tweet:hover {
   align-self: center;
 }
 
-.tweet-header h2 {
+article .tweet-header h2 {
   margin: 0;
   padding-left: 8px;
   align-self: center;
