@@ -25,3 +25,24 @@
     flex: auto;
     color: #ffffff;
   }
+
+#nav-bar .button {
+    vertical-align: 140%;
+    padding: .5em;
+    margin-left: 11em;
+    margin-right: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: .075em;
+    border-radius: .25em;
+    background-color: #e8fdff;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #00a087;
+    cursor: pointer;
+}
+
+#nav-bar .button:hover {
+    color: black;
+    background-color: white;
+}

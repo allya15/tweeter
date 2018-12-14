@@ -30,33 +30,37 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" width="80px" height="80px">
       <span class="header">Tweeter</span>
+      <span class="button"><i class="far fa-edit"></i>Compose</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+   <main class="container">
       <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form>
-        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <span><h2>Compose Tweet</h2></span>
+        <form method="POST" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
         <input type="submit" value="Tweet">
         <span class="counter">140</span>
       </form>
 
-      <section id="tweets-container">
-        <article class="tweet">
-          <header class="tweet-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Noto_Emoji_KitKat_263a.svg/1200px-Noto_Emoji_KitKat_263a.svg.png">
-            <h2>Name</h2>
-            <span>@tweeterhandle</span>
-          </header>
-          <p class="tweet-content">tweeeeeeeeeeeeeeeet</p>
-          <footer class="tweet=footer"> 1 day ago
-            </div>
-          </footer>
-        </article>
-      </section>
     </section>
+    <section id="tweets-container">
+      <article class="tweet">
+        <header class="tweet-header">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Noto_Emoji_KitKat_263a.svg/1200px-Noto_Emoji_KitKat_263a.svg.png">
+          <h2>Name</h2>
+          <span>@tweeterhandle</span>
+        </header>
 
+
+          <p class="tweet-content">tweeeeeeeeeeeeeeeet</p>
+        <footer class="tweet=footer"> age of tweet
+          <div class="icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
 
   </body>
