@@ -1,9 +1,20 @@
 form {
-  z-index: 1;
+  z-index: 0;
 }
 
-
 .new-tweet {
+    margin-left: 2em;
+    margin-right: 2em;
+    height: 10em;
+    background-color: #eee;
+    padding: 1em;
+    border-radius: .5em;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: thin;
+    display: none;
+}
+/*.new-tweet {
     margin-left: 2em;
     margin-right: 2em;
     height: 10em;
@@ -16,7 +27,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 400px;
-}
+}*/
 
 article.tweet {
   margin-bottom: 16px;
