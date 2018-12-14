@@ -45,29 +45,48 @@ const data = [
   }
 ];
 
-function renderTweets(data) {
-  data.forEach(function (i) {
-    const $eachTweet = createTweetElement(i);
-    $('#tweets-container').prepend($eachTweet);
-  })
-}
+$(document).ready(function() {
+   //this function escapes any possible html or script which could end up in the DOM
+   function escape(text){
+       let escaped = $('<div/>').text(text).html()
+       return escaped;
+   }
 
- function createTweetElement(data) {
-  const $makeArticle = $(`<article>`).addClass('tweet'); // make empty article
-  const $makeHeader = $(`<header>`).appendTo($makeArticle).addClass('tweet-header'); // make header
-  const $addDP = $(`<img>`).prop(`src`, data.user.avatars.small).appendTo($makeHeader); //  add icon to header
-  const $addName = $(`<h2>`).text(data.user.name).appendTo($makeHeader); // add name to header
-  const $addHandle = $(`<span>`).text(data.user.handle).appendTo($makeHeader); // add handle to header
-  // add tweet content
-  const $tweetContent = $(`<p>`).text(data.content.text).addClass('tweet-content').appendTo($makeArticle);
-  // add footer
-  const $makeFooter = $(`<footer>`).text(data.created_at).appendTo($makeArticle).addClass('tweet-footer');
-  const $addIcons = $(`<div>`).appendTo($makeFooter).addClass('icons'); // add div for icons
-  const $addFlagIcon = $(`<i class="fas fa-flag"></i>`).appendTo($addIcons); // add each icon
-  const $addRetweetIcon = $(`<i class="fas fa-retweet"></i>`).appendTo($addIcons);
-  const $addHeartIcon = $(`<i class="fas fa-heart"></i>`).appendTo($addIcons);
+   function createTweetElement(tweetDataObject){
+       const img = escape(tweetDataObject.user.avatars.small);
+       const name = escape(tweetDataObject.user.name);
+       const handle = escape(tweetDataObject.user.handle);
+       const text = escape(tweetDataObject.content.text);
+       const timestamp = escape(tweetDataObject.created_at);
+       const daysAgo = 0
 
-  return $makeArticle;
-}
 
-renderTweets(data);
+       let $tweet = $('<article>').addClass('tweet');
+       $tweet.append(`<header><img src="${img}"><h2>${name}</h2><span class='userID'>${handle}</span></header>`);
+       $tweet.append(`<p>${text}</p>`);
+       $tweet.append(`<footer>${timestamp}<i class="fas fa-flag"></i></footer></article>`);
+       return $tweet;
+   }
+
+   function renderTweets(tweets) {
+       tweets.forEach(function(x, i){
+           const $tweet = createTweetElement(tweets[i]);
+           $('section.tweets-container').append($tweet);
+      });
+  }
+   function loadTweets(){
+    console.log('load the tweets')
+    $.get('/tweets', (data) => {
+      renderTweets(data);
+    });
+  }
+   function clearTweets(){
+    console.log('clear the tweets')
+  }
+   $('form').on('submit', function(event) {
+    event.preventDefault();
+    $.post('/tweets/', $('form').serialize());
+    clearTweets();
+    loadTweets();
+  });
+});

@@ -47,14 +47,11 @@ article.tweet {
   font-style: italic;
 }
 
-.error { /* used for the counter when it reaches over 140 characters */
-  color: #ff0000;
-}
-
 article.tweet {
   background-color: #eee;
   border: 1px solid #d1d1d1;
   border-radius: 8px;
+  width: 400px;
 }
 
 article.tweet:hover {

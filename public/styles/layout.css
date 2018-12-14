@@ -24,6 +24,7 @@ body {
 main.container {
   display: flex;
   align-content: center;
+  flex-direction: column;
   width: 450px;
   background-color: #FFFFFF;
   padding-top: 140px;
@@ -43,6 +44,7 @@ article.tweet {
   opacity: .7;
   overflow: hidden;
   width: 400px;
+  align-self: center;
 }
 
 #tweet-container {
