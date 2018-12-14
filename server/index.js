@@ -10,6 +10,9 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+const {MongoClient} = require("mongodb");
+const MONGODB_URI = process.env.MONGODB_URI;
+
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
 
