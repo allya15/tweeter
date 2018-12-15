@@ -62,7 +62,7 @@ article.tweet {
   background-color: #eee;
   border: 1px solid #d1d1d1;
   border-radius: 8px;
-  width: 400px;
+  width: 386px;
 }
 
 article.tweet:hover {
@@ -120,4 +120,35 @@ article.tweet:hover .tweet-header {
 article.tweet:hover {
   border-color: black;
   opacity: 1;
+}
+
+.tweet-footer .date-posted {
+    display: inline;
+}
+
+.tweet-footer .icons {
+    float: right;
+    display: none;
+    position: relative;
+    right: 20px;
+    margin: 0px;
+}
+
+.tweet:hover footer .icons {
+    display: flex;
+}
+
+.tweet-footer .icons .fas .fa-flag {
+    width: 30px;
+    height: 30px;
+}
+
+.tweet-footer .icons .far .fa-thumbs-up {
+    width: 30px;
+    height: 30px;
+}
+
+.tweet-footer .icons.fas .fa-retweet {
+    width: 30px;
+    height: 30px;
 }

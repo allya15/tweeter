@@ -1,45 +1,33 @@
 
+/*
+ * Client-side JS logic goes here
+ * jQuery is already loaded
+ * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ */
+
+
 $(document).ready(function() {
 
     const $error = $('div.error')
     const $textArea = $('form textarea')
 
-
-    //this function escapes any possible html or script which could end up in the DOM
-    function escape(text){
-        let escaped = $('<div/>').text(text).html()
-        return escaped;
-    }
+    // function escape(text){
+    //     let escaped = $('<div/>').text(text).html()
+    //     return escaped;
+    // }
 
     function createTweetElement(tweetDataObject){
         const img = tweetDataObject.user.avatars.small;
         const name = tweetDataObject.user.name;
         const handle = tweetDataObject.user.handle;
         const text = escape(tweetDataObject.content.text);
-        const $datePosted = $("<p>").addClass("date-posted").text(unixDate(tweet.created_at)).appendTo($footer);
+        const timestamp = $.timeago(tweetDataObject.created_at);
 
         let $tweet = $('<article>').addClass('tweet');
         $tweet.append(`<header><img src="${img}"><h2>${name}</h2><span class='userID'>${handle}</span></header>`);
         $tweet.append(`<p>${text}</p>`);
         $tweet.append(`<footer>${timestamp}<i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-thumbs-up"></i></footer></article>`);
         return $tweet;
-
-
-    }
-
-    function unixDate(digits){
-        const daysAgo = Math.floor((Date.now() - digits) / 86400000);
-        const hoursAgo = Math.floor((Date.now() - digits) / 3600000);
-        const minutesAgo = Math.floor((Date.now() - digits) / 60000);
-        if (daysAgo < 2 && hoursAgo < 2 && minutesAgo < 2){
-            return "Moments ago.";
-        } else if (daysAgo < 2 && hoursAgo < 2){
-            return minutesAgo + " minutes ago.";
-        } else if (daysAgo < 2 && hoursAgo >= 2){
-            return hoursAgo + " hours ago.";
-        } else {
-            return daysAgo + " days ago";
-        }
     }
 
     function renderTweets(tweets) {
