@@ -1,72 +1,154 @@
-.new-tweet-container {
+form {
+  z-index: 0;
+}
+
+.new-tweet {
+    margin-left: 2em;
+    margin-right: 2em;
+    height: 10em;
+    background-color: #eee;
+    padding: 1em;
+    border-radius: .5em;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: thin;
     display: none;
 }
-
-.new-tweet-container .new-tweet {
-    display: inline-block;
-    background-color: rgb(236, 236, 236);
+/*.new-tweet {
+    margin-left: 2em;
+    margin-right: 2em;
+    height: 10em;
+    background-color: #eee;
+    padding: 1em;
+    border-radius: .5em;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
     width: 400px;
-    height: 158px;
-    border: solid 0.5px;
-    margin: 0px auto;
-    /* Moves the container down from the header */
-    padding: 10px;
-    /* Creates padding inside of the container */
+}*/
+
+article.tweet {
+  margin-bottom: 16px;
 }
 
-.new-tweet-container .new-tweet h2 {
-   margin-top: 10px;
-   /* Moves the "Compose Tweet" text down from the top */
-   margin-bottom: 2px;
-   /* Removes space between "Compose Tweet" and the solid line */
+.new-tweet h2 {
+  margin: 4px;
+  border-bottom: 1px black solid;
+  padding: 2px;
+  text-align: left;
 }
 
-.new-tweet-container .new-tweet .textarea {
-    padding-left: 10px;
-    padding-top: 10px;
-    width: 100%;
+.new-tweet textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-top: 16px;
+  z-index: 90;
 }
 
-.new-tweet-container .new-tweet .tweet-button:hover {
-    background-color: #418ff4;
+.new-tweet input {
+  margin-top: 8px;
 }
 
-.new-tweet-container .new-tweet .counter {
+.new-tweet .counter {
+  float: right;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+article.tweet {
+  background-color: #eee;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  width: 386px;
+}
+
+article.tweet:hover {
+  opacity: 1;
+}
+
+.tweet-header {
+  display: flex;
+  height: 50px;
+  margin: 8px;
+  opacity: 0.5;
+}
+
+.tweet-header img {
+  width: 3em;
+  height: 3em;
+  align-self: center;
+}
+
+.tweet-header span {
+  margin-left: auto;
+  align-self: center;
+}
+
+article .tweet-header h2 {
+  margin: 0;
+  padding-left: 8px;
+  align-self: center;
+}
+
+.tweet-content{
+  background-color: white;
+  padding: 16px;
+  font-size: 1em;
+  margin: auto;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.icons {
+  float: right;
+}
+
+.tweet-footer {
+  padding: 8px;
+  height: 30px;
+  font-size: smaller;
+  background-color: white;
+  border-radius: 0px 0px 8px 8px;
+}
+
+article.tweet:hover .tweet-header {
+  opacity: 1;
+}
+
+article.tweet:hover {
+  border-color: black;
+  opacity: 1;
+}
+
+.tweet-footer .date-posted {
+    display: inline;
+}
+
+.tweet-footer .icons {
     float: right;
-    background-color: rgb(236, 236, 236);
-}
-.new-tweet-container .new-tweet .error-container {
     display: none;
+    position: relative;
+    right: 20px;
+    margin: 0px;
 }
 
-.new-tweet-container .new-tweet .error-container .error {
-    display: inline-block;
-    text-align: center;
-    opacity: 1;
-    overflow: visible;
-    width: 400px;
-    border: 1px black solid;
-    border-radius: 10px;
-    font-size: 16px;
-    color: black;
-    background-color: red;
-    padding-top: 12px;
-    padding-bottom: 10px;
-    margin: 0 auto;
-    margin-left: -10px;
+.tweet:hover footer .icons {
+    display: flex;
 }
 
-.new-tweet-container  .new-tweet .error-container .error h2 {
-    font-weight: bold;
-    opacity: 1;
-    margin-top: -5px;
+.tweet-footer .icons .fas .fa-flag {
+    width: 30px;
+    height: 30px;
 }
 
-.new-tweet-container .new-tweet .error-container .error p {
-    opacity: 1;
+.tweet-footer .icons .far .fa-thumbs-up {
+    width: 30px;
+    height: 30px;
 }
 
-.new-tweet-container .new-tweet .error-container .error button {
-    border-radius: 10px;
-    width: 70px;
+.tweet-footer .icons.fas .fa-retweet {
+    width: 30px;
+    height: 30px;
 }
