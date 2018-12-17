@@ -1,6 +1,5 @@
 .new-tweet-container {
     display: none;
-    margin-top: 80px;
 }
 
 .new-tweet-container .new-tweet {
@@ -9,13 +8,17 @@
     width: 400px;
     height: 158px;
     border: solid 0.5px;
-    margin: 5px auto;
+    margin: 0px auto;
+    /* Moves the container down from the header */
     padding: 10px;
+    /* Creates padding inside of the container */
 }
 
 .new-tweet-container .new-tweet h2 {
    margin-top: 10px;
+   /* Moves the "Compose Tweet" text down from the top */
    margin-bottom: 2px;
+   /* Removes space between "Compose Tweet" and the solid line */
 }
 
 .new-tweet-container .new-tweet .textarea {
