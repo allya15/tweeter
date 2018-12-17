@@ -10,103 +10,16 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
-  margin: 0;
+  font-family: "Roboto Condensed", Sans-Serif;
   color: #244751;
-  background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif;
+  background-color:rgb(236, 236, 236);
 }
 
-main.container {
-  display: flex;
-  align-content: center;
-  flex-direction: column;
+.container {
   width: 450px;
-  background-color: #FFFFFF;
-  padding-top: 140px;
-  margin: auto;
-  height: 1000px;
+  height: 100% + 35px;
+  margin: 80px auto;
   padding: 25px;
+  background-color: white;
 }
-
-article.tweet {
-  margin-top: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
-  background-color: #fff;
-  border-radius: .5em;
-  border-style: solid;
-  border-color: lightgray;
-  border-width: thin;
-  opacity: .7;
-  overflow: hidden;
-  width: 400px;
-  align-self: center;
-}
-
-#tweet-container {
-  margin-top: 500px;
-   margin: 0px auto;
-    /* Moves the container down from the header */
-    padding: 10px;
-}
-article.tweet {
-  background-color: #fff;
-  margin-top: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
-  border-radius: 0.5em;
-  border-style: solid;
-  border-color: lightgray;
-  border-width: thin;
-  opacity: 0.7;
-  overflow: hidden;
-}
-article.tweet h2 {
-  color: #244751;
-  margin: 0;
-  vertical-align: top;
-  padding: 0 0 1em 0.5em;
-  display: inline-block;
-}
-article.tweet .userID {
-  font-weight: 200;
-  color: grey;
-  float: right;
-  vertical-align: top;
-  margin: 0.25em 0 0 0;
-  opacity: 0.8;
-}
-article.tweet header {
-  background-color: #eee;
-  padding: 0.5em;
-}
-article.tweet img {
-  float: left;
-  border-radius: 0.5em;
-  opacity: 0.8;
-}
-article.tweet p {
-  padding: 0 1em;
-  font-size: 1.25em;
-  word-break: break-all;
-}
-article.tweet footer {
-  border: thin solid #ddd;
-  padding: 0.5em;
-}
-article.tweet i {
-  float: right;
-  visibility: hidden;
-  padding: 0 0.25em;
-}
-article.tweet i:hover {
-  opacity: 1;
-}
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

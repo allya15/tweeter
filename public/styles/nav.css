@@ -1,48 +1,44 @@
 #nav-bar {
+    z-index: 1;
     position: fixed;
+    top: 0;
     padding-left: 2em;
     padding-right: 2em;
+    background-color: #00a087;
+    color: #e8fdff;
     height: 80px;
     width: 100%;
-    z-index: 1;
-    background-color: #00a087;
-    font-color: #e8fdff;
-    align-items: center;
-    display: flex;
-    flex-grow: row;
-    justify-content: space-between;
-  }
-
-#nav-bar .logo {
-    height: 80px;
-    width: 80px;
-    flex: : auto;
-  }
-
-#nav-bar .header {
-    font-size: 2em;
-    padding-left: 10px;
-    flex: auto;
-    color: #ffffff;
-  }
-
-#nav-bar .button {
-    vertical-align: 140%;
-    padding: .5em;
-    margin-left: 11em;
-    margin-right: auto;
-    border-style: solid;
-    border-color: black;
-    border-width: .075em;
-    border-radius: .25em;
-    background-color: #e8fdff;
-    font-size: 1.3em;
-    font-weight: 300;
-    color: #00a087;
-    cursor: pointer;
 }
 
-#nav-bar .button:hover {
-    color: black;
+#nav-bar .logo {
+    width: 80px;
+    height: 80px;
+}
+
+
+#nav-bar .header {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2;
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+#nav-bar .compose-button {
+    float: right;
+    position: relative;
+    top: 15px;
+    height: 45px;
+    width: 120px;
+    font-size: 24px;
     background-color: white;
+    color: #00a087;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+#nav-bar .compose-button:hover {
+    color: black;
+    border: 2px solid;
 }

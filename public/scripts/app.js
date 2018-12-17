@@ -32,35 +32,21 @@ function unixDate(digits){
 $(document).ready(function() {
 
     function renderTweets(tweetDataArray){
-        // render tweets for an array of tweet data
         tweetDataArray.forEach(function(item) {
-            // for each tweet in the array of tweet data, render it an append it to the
-            // .all-tweets section in index.html
             var $tweet = createTweetElement(item);
-            // console.log("Tweet item: ", $tweet);
             $(".all-tweets").prepend($tweet);
         });
     }
-    // function to handle the rendering of tweets into DOM structure (tree)
-
     function loadTweets (){
         $.get("/tweets")
-        // this is getting the tweets from tweets.js through index.html
             .done(tweets => {
-                // once the tweets have been received, render them
                 console.log("Got tweets! Rendering...");
                 renderTweets(tweets);
             })
             .fail(() => {
-                // if the tweets cannot be found, return an error
                 alert("Error");
             });
     }
-
-    // Handles the toggling of the "Compose Tweet" field by clicking the
-    // ... "Compose" button. If the error field is visible, it will also
-    // slide up. When the compose button is clicked again to reveal the new-tweet
-    // text area, it will autoselect it.
     $(function toggleCompose() {
         var $navButton = $("#nav-bar .compose-button");
         $navButton.on("click", function() {
@@ -72,7 +58,6 @@ $(document).ready(function() {
         });
     });
 
-    // Handles the close error button: toggles the error field when clicked.
     $(function closeError() {
         var $errorButton =  $(".container .new-tweet-container .new-tweet .error-container .error button");
         $errorButton.on("click", function() {
@@ -81,21 +66,15 @@ $(document).ready(function() {
     });
 
     $('form').on('submit', function(event) {
-        // when a submit event is called on "form", perform a function with argument "e" (for each event occurrence)
         event.preventDefault();
-        // prevent the default, which is to reload the page
         const formContent = $(this).serialize();
         const formLength = $("textarea").val().length;
-        // serialize creates key:value pairs with the data entered ( in this case, key:value = text:<tweet message> )
-        // console.log('formContent', formLength);
         function validateForm(){
             if (formLength >= 140){
-                // Display the error field and add error text
                 $(".error-container").show();
                 $(".error-container .error p").text("Your tweet exceeds the maximum number of characters permitted.");
                 return false;
             } else if (formLength == 0){
-                // Display the error field and add error text
                 $(".error-container").show();
                 $(".error-container .error p").text("Your tweet is empty.");
                 return false;
@@ -106,9 +85,7 @@ $(document).ready(function() {
         if (validateForm() === false){
             event.stopPropagation();
         } else {
-            // if successful, continue
             $.ajax({
-                // sending the data to the server (asychronously)
                 method: 'POST',
                 url: '/tweets',
                 data: formContent,
@@ -116,9 +93,7 @@ $(document).ready(function() {
                     $("form")[0].reset();
                 }
             }).then(data => {
-                // after the data is sent, load the tweets, clear the error (if
-                // ... there is one), then clear the text area.
-                loadTweets();
+                      loadTweets();
                 $(".new-tweet .error-container").slideUp();
                 $(".new-tweet .textarea").text("");
                 $(".counter").text("140");
