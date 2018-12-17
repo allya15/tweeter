@@ -30,28 +30,6 @@ $(document).ready(function() {
         return $tweet;
     }
 
-      function createTweetElement(tweet) {
-    let user = tweet["user"];
-    let content = tweet["content"];
-    let timeStamp = tweet["created_at"];
-    let date = new Date(timeStamp * 1000).toDateString();
-    // let day = date.toDateString();
-
-    return (
-      `<article class="tweet">
-        <header class="tweet-header">
-          <img id="avatar" src="${escape(user["avatars"].small)}" />
-            <h2>${escape(user["name"])}</h2>
-          <span class="handle">${escape(user["handle"])}</span>
-        </header>
-        <p class="tweet-body">${escape(content["text"])}</p>
-        <footer class="tweet-footer"><p class="date">${timeSince(timeStamp)} ago.</p>
-          <footer class="emojis">⚐ ☞ ❤︎</div
-        </footer>
-      </article>`
-    )
-  }
-
     function renderTweets(tweets) {
         tweets.reverse().forEach(function(x, i){
             const $tweet = createTweetElement(tweets[i]);

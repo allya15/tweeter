@@ -50,7 +50,59 @@ article.tweet {
 #tweet-container {
   margin-top: 500px;
 }
-
+article.tweet {
+  background-color: #fff;
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: thin;
+  opacity: 0.7;
+  overflow: hidden;
+}
+article.tweet h2 {
+  color: #244751;
+  margin: 0;
+  vertical-align: top;
+  padding: 0 0 1em 0.5em;
+  display: inline-block;
+}
+article.tweet .userID {
+  font-weight: 200;
+  color: grey;
+  float: right;
+  vertical-align: top;
+  margin: 0.25em 0 0 0;
+  opacity: 0.8;
+}
+article.tweet header {
+  background-color: #eee;
+  padding: 0.5em;
+}
+article.tweet img {
+  float: left;
+  border-radius: 0.5em;
+  opacity: 0.8;
+}
+article.tweet p {
+  padding: 0 1em;
+  font-size: 1.25em;
+  word-break: break-all;
+}
+article.tweet footer {
+  border: thin solid #ddd;
+  padding: 0.5em;
+}
+article.tweet i {
+  float: right;
+  visibility: hidden;
+  padding: 0 0.25em;
+}
+article.tweet i:hover {
+  opacity: 1;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
